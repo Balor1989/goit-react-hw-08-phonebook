@@ -3,8 +3,8 @@
   min-width: 90%;
   background-color: #faf5f5;
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  padding: 25px 30px;
+  grid-template-columns: 1fr;
+  padding: 20px 30px;
   justify-items: center;
   border-radius: 20px;
   background-color: #faf5f5;
