@@ -1,8 +1,27 @@
+.wrapper {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+
 .phonebookSection {
-  margin: 60px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 40px;
   border-radius: 20px;
   background-color: #faf5f5;
