@@ -85,7 +85,7 @@ export default function Phonebook() {
           />
         </div>
         <div className={s.buttonBox}>
-          <button className={s.deleteButton} type="submit">
+          <button className={s.addButton} type="submit">
             Add contact
           </button>
         </div>

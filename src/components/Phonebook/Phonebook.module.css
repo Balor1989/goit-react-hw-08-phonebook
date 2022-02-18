@@ -25,7 +25,7 @@
   margin-bottom: 30px;
 }
 
-.deleteButton {
+.addButton {
   text-decoration: none;
   font-family: roboto, sans-serif;
   font-weight: 700;
@@ -41,7 +41,7 @@
   transition: 250ms;
 }
 
-.deleteButton:hover,
-.deleteButton:focus {
+.addButton:hover,
+.addButton:focus {
   background-color: rgb(198, 131, 204);
 }
