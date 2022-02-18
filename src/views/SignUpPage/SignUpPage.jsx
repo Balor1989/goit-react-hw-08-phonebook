@@ -1,8 +1,32 @@
 import s from './SignUpPage.module.css';
+import { useState } from 'react';
 
 export default function SignUpPage() {
-  const formSubmit = () => {
-    console.log('submit');
+  const [email, setEmail] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+
+    switch (name) {
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
+      case 'login':
+        setLogin(value);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const formSubmit = e => {
+    e.preventDefault();
+    console.log(email, password, login);
   };
 
   return (
@@ -12,8 +36,8 @@ export default function SignUpPage() {
           <label className={s.label}>Login</label>
           <input
             className={s.input}
-            // value={login}
-            // onChange={handleChange}
+            value={login}
+            onChange={handleChange}
             type="text"
             name="login"
             required
@@ -23,8 +47,8 @@ export default function SignUpPage() {
           <label className={s.label}>Email</label>
           <input
             className={s.input}
-            // value={email}
-            // onChange={handleChange}
+            value={email}
+            onChange={handleChange}
             type="email"
             name="email"
             required
@@ -34,9 +58,9 @@ export default function SignUpPage() {
           <label className={s.label}>Password</label>
           <input
             className={s.input}
-            // value={password}
-            // onChange={handleChange}
-            type="text"
+            value={password}
+            onChange={handleChange}
+            type="password"
             name="password"
             required
           />
