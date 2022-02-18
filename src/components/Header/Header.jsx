@@ -1,15 +1,15 @@
 import s from './Header.module.css';
-import { NavLink } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
+import AuthNav from '../AuthNav/AuthNav';
+import UserMenu from '../UserMenu/UserMenu';
 
 const Header = () => {
   return (
     <header className={s.headerBox}>
-      Header
-      <nav>
-        <NavLink to="/">Homepage</NavLink>
-        <NavLink to="/phonebook">Phonebook</NavLink>
-        <NavLink to="/signIn">Sign In</NavLink>
-        <NavLink to="/signUp">Sign Up</NavLink>
+      <nav className={s.navigationBox}>
+        <Navigation />
+        <AuthNav />
+        <UserMenu />
       </nav>
     </header>
   );
