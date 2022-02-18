@@ -14,7 +14,8 @@ const App = () => {
       <main className={(s.main, s.phonebookSection)}>
         <Suspense fallback={<h1>Loading...</h1>}>
           <Routes>
-            <Route path="/" element={<PhonebookPage />} />;
+            <Route path="/" element={<h1>Homepage</h1>} />;
+            <Route path="/phonebook" element={<PhonebookPage />} />;
             <Route path="/signIn" element={<SignInPage />} />;
             <Route path="/SignUp" element={<SignUpPage />} />;
           </Routes>
