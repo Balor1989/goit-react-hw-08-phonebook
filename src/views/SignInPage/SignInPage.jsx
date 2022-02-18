@@ -9,15 +9,13 @@ export default function SignInPage() {
     <section>
       <form className={s.phonebookForm} onSubmit={formSubmit}>
         <div className={s.inputBox}>
-          <label className={s.label}>Login</label>
+          <label className={s.label}>Email</label>
           <input
             className={s.input}
-            // value={name}
+            // value={email}
             // onChange={handleChange}
-            type="text"
-            name="login"
-            pattern="^[a-zA-Zа-яА-Я]+((['-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Имя может состоять только из букв, апострофа и тире. Например Adrian,Castelmore, d'Artagnan и т. п."
+            type="email"
+            name="email"
             required
           />
         </div>
@@ -25,7 +23,7 @@ export default function SignInPage() {
           <label className={s.label}>Password</label>
           <input
             className={s.input}
-            // value={phone}
+            // value={password}
             // onChange={handleChange}
             type="text"
             name="password"

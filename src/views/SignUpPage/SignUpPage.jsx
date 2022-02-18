@@ -12,12 +12,10 @@ export default function SignUpPage() {
           <label className={s.label}>Login</label>
           <input
             className={s.input}
-            // value={name}
+            // value={login}
             // onChange={handleChange}
             type="text"
             name="login"
-            pattern="^[a-zA-Zа-яА-Я]+((['-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Имя может состоять только из букв, апострофа и тире. Например Adrian,Castelmore, d'Artagnan и т. п."
             required
           />
         </div>
@@ -25,9 +23,9 @@ export default function SignUpPage() {
           <label className={s.label}>Email</label>
           <input
             className={s.input}
-            // value={phone}
+            // value={email}
             // onChange={handleChange}
-            type="text"
+            type="email"
             name="email"
             required
           />
@@ -36,7 +34,7 @@ export default function SignUpPage() {
           <label className={s.label}>Password</label>
           <input
             className={s.input}
-            // value={phone}
+            // value={password}
             // onChange={handleChange}
             type="text"
             name="password"
