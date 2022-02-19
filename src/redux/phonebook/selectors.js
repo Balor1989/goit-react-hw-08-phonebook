@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://620a3f5092946600171c58f2.mockapi.io/v1_0';
+const API = 'https://620a3f5092946600171c58f2.mockapi.io/v1_0';
 
 export const getContacts = state => state.phonebook.contacts;
 export const getFilter = state => state.phonebook.filter;
@@ -16,7 +16,7 @@ export const getVisibleContacts = state => {
 
 export const fetchContacts = createAsyncThunk('phonebook/fetchContacts', async () => {
   try {
-    const { data } = await axios.get('/contacts');
+    const { data } = await axios.get(`${API}/contacts`);
     return data;
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ export const fetchContacts = createAsyncThunk('phonebook/fetchContacts', async (
 
 export const deleteContacts = createAsyncThunk('phonebook/deleteContacts', async id => {
   try {
-    await axios.delete(`/contacts/${id}`);
+    await axios.delete(`${API}/contacts/${id}`);
     return id;
   } catch (error) {
     console.log(error);
@@ -34,7 +34,7 @@ export const deleteContacts = createAsyncThunk('phonebook/deleteContacts', async
 
 export const addContacts = createAsyncThunk('phonebook/addContacts', async contact => {
   try {
-    const { data } = await axios.post('/contacts/', contact);
+    const { data } = await axios.post(`${API}/contacts/`, contact);
     return data;
   } catch (error) {
     console.log(error);
