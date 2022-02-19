@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { signIn, signUp } from './auth-operations';
 
 const initState = {
   token: null,
@@ -9,7 +10,9 @@ const initState = {
 const authSlice = createSlice({
   name: 'auth',
   initState,
-  extraReducers: {},
+  extraReducers: {
+    [signUp.fulfilled](state, action) {},
+  },
 });
 
 export default authSlice.reducer;

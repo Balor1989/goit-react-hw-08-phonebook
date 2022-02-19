@@ -1,10 +1,13 @@
 import s from './SignUpPage.module.css';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../../redux/auth/auth-operations';
 
 export default function SignUpPage() {
   const [email, setEmail] = useState('');
-  const [login, setLogin] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -16,8 +19,8 @@ export default function SignUpPage() {
       case 'password':
         setPassword(value);
         break;
-      case 'login':
-        setLogin(value);
+      case 'name':
+        setName(value);
         break;
       default:
         return;
@@ -26,7 +29,10 @@ export default function SignUpPage() {
 
   const formSubmit = e => {
     e.preventDefault();
-    console.log(email, password, login);
+    dispatch(signUp({ email, password, name }));
+    setEmail('');
+    setName('');
+    setPassword('');
   };
 
   return (
@@ -36,10 +42,10 @@ export default function SignUpPage() {
           <label className={s.label}>Login</label>
           <input
             className={s.input}
-            value={login}
+            value={name}
             onChange={handleChange}
             type="text"
-            name="login"
+            name="name"
             required
           />
         </div>

@@ -3,17 +3,19 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-const signUp = createAsyncThunk('auth/signUp', async values => {
+export const signUp = createAsyncThunk('auth/signUp', async values => {
   try {
     const { data } = await axios.post('/users/signup', values);
+    return data;
   } catch (error) {
     console.log(error);
   }
 });
 
-const signIp = createAsyncThunk('auth/signIn', async values => {
+export const signIn = createAsyncThunk('auth/signIn', async values => {
   try {
     const { data } = await axios.post('/users/login', values);
+    return data;
   } catch (error) {
     console.log(error);
   }
