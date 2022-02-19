@@ -8,7 +8,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export default function Phonebook() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ export default function Phonebook() {
         setName(value);
         break;
       case 'number':
-        setPhone(value);
+        setNumber(value);
         break;
       default:
         return;
@@ -34,8 +34,8 @@ export default function Phonebook() {
     });
     if (!repeatName) {
       Notify.success(`${name} is added in contacts`);
-      dispatch(addContacts({ name, phone }));
-      setPhone('');
+      dispatch(addContacts({ name, number }));
+      setNumber('');
       setName('');
       return;
     }
@@ -75,7 +75,7 @@ export default function Phonebook() {
           <label className={s.label}>Phone</label>
           <input
             className={s.input}
-            value={phone}
+            value={number}
             onChange={handleChange}
             type="tel"
             name="number"

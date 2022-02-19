@@ -19,10 +19,10 @@ export default function Contacts() {
 
   return (
     <ul className={s.cardList}>
-      {contacts.map(({ id, name, phone }) => (
+      {contacts.map(({ id, name, number }) => (
         <li className={s.cardBox} key={id}>
           <p className={s.cardValues}>
-            {name}: {phone}
+            {name}: {number}
           </p>
           <div className={s.buttonBox}>
             <button className={s.deleteButton} onClick={() => onDeleteContactCard(id)}>
