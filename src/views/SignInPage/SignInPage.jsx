@@ -1,9 +1,12 @@
 import s from './SignInPage.module.css';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signIn } from '../../redux/auth/auth-operations';
 
 export default function SignInPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -22,7 +25,9 @@ export default function SignInPage() {
 
   const formSubmit = e => {
     e.preventDefault();
-    console.log(email, password);
+    dispatch(signIn({ email, password }));
+    setEmail('');
+    setPassword('');
   };
 
   return (
