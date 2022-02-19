@@ -1,11 +1,11 @@
 .wrapper {
-  padding: 10px 0;
+  padding: 1vh 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   align-items: center;
   justify-items: center;
-  min-height: 100vh;
+  min-height: 98vh;
   grid-template-areas:
     'header'
     'main'
