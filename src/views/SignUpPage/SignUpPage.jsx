@@ -79,6 +79,7 @@ export default function SignUpPage() {
             onChange={handleChange}
             type="password"
             name="password"
+            title="minimum number of characters - seven"
             required
           />
         </div>
