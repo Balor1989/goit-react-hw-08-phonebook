@@ -1,13 +1,24 @@
 import s from './SignUpPage.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../redux/auth/auth-operations';
+import { getIsLoggedIn } from '../../redux/auth/auth-selectors';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function SignUpPage() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const loggedIn = useSelector(getIsLoggedIn);
+
+  useEffect(() => {
+    if (loggedIn) {
+      return navigate('/Phonebook');
+    }
+  }, [navigate, loggedIn]);
 
   const handleChange = e => {
     const { name, value } = e.target;
