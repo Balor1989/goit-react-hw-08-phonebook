@@ -45,7 +45,9 @@ export default function SignInPage() {
     <section>
       <form className={s.phonebookForm} onSubmit={formSubmit}>
         <div className={s.inputBox}>
-          <label className={s.label}>Email</label>
+          <label className={s.label}>
+            Email<span className={s.required}>*</span>
+          </label>
           <input
             className={s.input}
             value={email}
@@ -56,7 +58,9 @@ export default function SignInPage() {
           />
         </div>
         <div className={s.inputBox}>
-          <label className={s.label}>Password</label>
+          <label className={s.label}>
+            Password<span className={s.required}>*</span>
+          </label>
           <input
             className={s.input}
             value={password}

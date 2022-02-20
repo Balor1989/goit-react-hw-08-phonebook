@@ -37,3 +37,6 @@
 .addButton:focus {
   background-color: rgb(198, 131, 204);
 }
+.required {
+  color: rgb(252, 7, 7);
+}

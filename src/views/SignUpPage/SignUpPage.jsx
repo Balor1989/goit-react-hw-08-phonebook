@@ -50,7 +50,9 @@ export default function SignUpPage() {
     <section>
       <form className={s.phonebookForm} onSubmit={formSubmit}>
         <div className={s.inputBox}>
-          <label className={s.label}>Login</label>
+          <label className={s.label}>
+            Login<span className={s.required}>*</span>
+          </label>
           <input
             className={s.input}
             value={name}
@@ -61,7 +63,9 @@ export default function SignUpPage() {
           />
         </div>
         <div className={s.inputBox}>
-          <label className={s.label}>Email</label>
+          <label className={s.label}>
+            Email<span className={s.required}>*</span>
+          </label>
           <input
             className={s.input}
             value={email}
@@ -72,7 +76,9 @@ export default function SignUpPage() {
           />
         </div>
         <div className={s.inputBox}>
-          <label className={s.label}>Password</label>
+          <label className={s.label}>
+            Password<span className={s.required}>*</span>
+          </label>
           <input
             className={s.input}
             value={password}
@@ -85,7 +91,7 @@ export default function SignUpPage() {
         </div>
         <div className={s.buttonBox}>
           <button className={s.addButton} type="submit">
-            Sign-up
+            Create
           </button>
         </div>
       </form>
