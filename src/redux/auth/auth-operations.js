@@ -52,7 +52,8 @@ export const refreshCurrentUser = createAsyncThunk(
     }
     token.set(savedToken);
     try {
-      await axios.get('/users/current');
+      const { data } = await axios.get('/users/current');
+      return data;
     } catch (error) {
       console.log(error);
     }
