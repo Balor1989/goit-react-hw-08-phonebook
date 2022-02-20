@@ -6,13 +6,25 @@ import {
   getVisibleContacts,
 } from '../../redux/phonebook/selectors';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getIsLoggedIn } from '../../redux/auth/auth-selectors';
 
 export default function Contacts() {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const loggedIn = useSelector(getIsLoggedIn);
+
   const onDeleteContactCard = id => {
     dispatch(deleteContacts(id));
   };
+
+  useEffect(() => {
+    if (!loggedIn) {
+      return navigate('/SignIn');
+    }
+  }, [loggedIn, navigate]);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
