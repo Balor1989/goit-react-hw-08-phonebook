@@ -4,10 +4,18 @@ import Footer from './components/Footer/Footer';
 import PhonebookPage from './views/PhonebookPage/PhonebookPage';
 import SignInPage from './views/SignInPage/SignInPage';
 import SignUpPage from './views/SignUpPage/SignUpPage';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { refreshCurrentUser } from './redux/auth/auth-operations';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshCurrentUser());
+  }, [dispatch]);
+
   return (
     <div className={s.wrapper}>
       <Header className={s.header} />

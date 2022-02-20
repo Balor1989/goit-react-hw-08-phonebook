@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
 export const getContacts = state => state.phonebook.contacts;
 export const getFilter = state => state.phonebook.filter;
 
