@@ -1,6 +1,6 @@
 .footerBox {
   margin-top: 40px;
-  min-width: 90%;
+  min-width: 75%;
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 20px 30px;

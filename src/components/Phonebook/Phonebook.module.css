@@ -19,9 +19,10 @@
 }
 .input {
   font-size: 17px;
+  transition: border 300ms ease;
 }
-.input:focus {
-  border-color: rgb(156, 99, 209);
+.input:hover {
+  border: 2px solid rgb(156, 99, 209);
 }
 .buttonBox {
   text-align: center;

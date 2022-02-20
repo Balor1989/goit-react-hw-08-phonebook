@@ -2,8 +2,10 @@ import s from './HomePage.module.css';
 
 export default function HomePage() {
   return (
-    <h1>
-      Welcome to <span className={s.titlePart}>Phonebook</span>
+    <>
+      <h1>
+        Welcome to <span className={s.titlePart}>Phonebook</span>{' '}
+      </h1>
       <p className={s.titleDescription}>
         People use the contact book every day. They prefer to use them rather than
         memorize phone numbers by heart, as it is very convenient to use. For example
@@ -16,6 +18,6 @@ export default function HomePage() {
         Remember the numbers or ask colleagues are not required. Because all data will be
         stored in the electronic contact book.
       </p>
-    </h1>
+    </>
   );
 }

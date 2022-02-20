@@ -1,6 +1,6 @@
 .headerBox {
   margin-bottom: 40px;
-  min-width: 90%;
+  min-width: 75%;
   background-color: #faf5f5;
   display: grid;
   grid-template-columns: 1fr;
