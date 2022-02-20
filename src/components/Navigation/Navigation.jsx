@@ -5,10 +5,17 @@ import { getIsLoggedIn } from '../../redux/auth/auth-selectors';
 
 export default function Navigation() {
   const loggedIn = useSelector(getIsLoggedIn);
+  const activeLink = ({ isActive }) => (isActive ? `${s.link} ${s.activeLink}` : s.link);
   return (
     <div className={s.navigationBox}>
-      <NavLink to="/">Homepage</NavLink>
-      {loggedIn && <NavLink to="/phonebook">Phonebook</NavLink>}
+      <NavLink className={activeLink} to="/">
+        Homepage
+      </NavLink>
+      {loggedIn && (
+        <NavLink className={activeLink} to="/phonebook">
+          Phonebook
+        </NavLink>
+      )}
     </div>
   );
 }

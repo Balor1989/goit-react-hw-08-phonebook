@@ -48,7 +48,7 @@ export default function Phonebook() {
         Phonebook
         <IconContext.Provider
           value={{
-            color: 'rgb(198, 131, 204)',
+            color: 'rgb(156, 99, 209)',
             size: '25px',
             style: { margin: '0 0 0 15px' },
           }}

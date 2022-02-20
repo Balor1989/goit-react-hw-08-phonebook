@@ -15,7 +15,7 @@
 
 .navigationBox {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   min-width: 90%;
-  justify-items: center;
+  justify-items: end;
 }

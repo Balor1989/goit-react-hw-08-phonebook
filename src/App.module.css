@@ -1,11 +1,11 @@
 .wrapper {
-  padding: 1vh 0;
+  padding: 2vh 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   align-items: center;
   justify-items: center;
-  min-height: 98vh;
+  min-height: 96vh;
   grid-template-areas:
     'header'
     'main'
@@ -22,6 +22,7 @@
 }
 
 .phonebookSection {
+  max-width: 500px;
   padding: 40px;
   border-radius: 20px;
   background-color: #faf5f5;
