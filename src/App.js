@@ -1,13 +1,26 @@
 import s from './App.module.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import PhonebookPage from './views/PhonebookPage/PhonebookPage';
-import SignInPage from './views/SignInPage/SignInPage';
-import SignUpPage from './views/SignUpPage/SignUpPage';
-import { Suspense, useEffect } from 'react';
+// import SignInPage from './views/SignInPage/SignInPage';
+// import SignUpPage from './views/SignUpPage/SignUpPage';
+import { Suspense, useEffect, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { refreshCurrentUser } from './redux/auth/auth-operations';
+
+const PhonebookPage = lazy(() =>
+  import('./views/PhonebookPage/PhonebookPage' /* webpackChunkName: "phonebook-page" */),
+);
+const HomePage = lazy(() =>
+  import('./views/HomePage/HomePage' /* webpackChunkName: "home-page" */),
+);
+const SignInPage = lazy(() =>
+  import('./views/SignInPage/SignInPage' /* webpackChunkName: "sign-in-page" */),
+);
+
+const SignUpPage = lazy(() =>
+  import('./views/SignUpPage/SignUpPage' /* webpackChunkName: "sign-up-page" */),
+);
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +35,7 @@ const App = () => {
       <main className={(s.main, s.phonebookSection)}>
         <Suspense fallback={<h1>Loading...</h1>}>
           <Routes>
-            <Route path="/" element={<h1>Homepage</h1>} />;
+            <Route path="/" element={<HomePage />} />;
             <Route path="/phonebook" element={<PhonebookPage />} />;
             <Route path="/signIn" element={<SignInPage />} />;
             <Route path="/SignUp" element={<SignUpPage />} />;
