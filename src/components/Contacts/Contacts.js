@@ -21,7 +21,7 @@ export default function Contacts() {
 
   useEffect(() => {
     if (!loggedIn) {
-      return navigate('/SignIn');
+      return navigate('/signIn');
     }
   }, [loggedIn, navigate]);
 

@@ -15,7 +15,7 @@ export default function SignInPage() {
 
   useEffect(() => {
     if (loggedIn) {
-      return navigate('/Phonebook');
+      return navigate('/phonebook');
     }
   }, [navigate, loggedIn]);
 
