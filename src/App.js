@@ -40,7 +40,7 @@ const App = () => {
               <Route path="/" element={<HomePage />} />;
               <Route path="/phonebook" element={<PhonebookPage />} />;
               <Route path="/signIn" element={<SignInPage />} />;
-              <Route path="/SignUp" element={<SignUpPage />} />;
+              <Route path="/signUp" element={<SignUpPage />} />;
             </Routes>
           </Suspense>
         </main>
